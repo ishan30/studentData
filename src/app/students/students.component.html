@@ -1,0 +1,31 @@
+<p>students works!</p>
+
+
+<br/>
+
+
+<!-- <div>
+    <input [(ngModel)] ='student.name' placeholder="name"/>
+</div>
+<div>{{student.id}}</div>
+<div>{{student.name | lowercase }}</div>
+<div>{{student.mobileNo}}</div>
+<div>{{student.email}}</div> -->
+
+<!-- comment : ctrl K+C -->
+<ul class="students">
+    <li *ngFor="let student of students" (click)="onSelect(student)">
+        <!-- <div *ngIf='student.id > 1'> -->
+        <span class="badge">{{student.id}}</span> {{student.name}} 
+        <!-- </div> -->
+        <!-- <span>{{ student.name}}</span> -->
+    </li>
+</ul>
+
+<!-- refactord the student detail to child component for reusability  -->
+<app-student-detail [student]="selectedStudent"></app-student-detail>
+
+
+<!-- for(var obj of collection) -->
+<!-- //Interpolation --  One way binding {{ }} -->
+<!-- When you use ngModel with square brackets [] -> it works as interpolation / one way binding -->
