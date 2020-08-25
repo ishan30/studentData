@@ -14,4 +14,9 @@ export class StudentDataService {
     // call your API service via http call
     return of(STUDENTS);
   }
+
+  // returns student data as per the input  -> return perticular data
+  getStudent(inputId :number) : Observable<iStudent>{
+    return of(STUDENTS.find( student => student.id === inputId));
+  }
 }

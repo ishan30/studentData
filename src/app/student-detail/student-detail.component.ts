@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { iStudent } from '../iStudent';
+import { StudentDataService } from '../student-data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-student-detail',
@@ -7,10 +9,24 @@ import { iStudent } from '../iStudent';
   styleUrls: ['./student-detail.component.scss']
 })
 export class StudentDetailComponent implements OnInit {
-
-  constructor() { }
-  @Input() student : iStudent;
+  student :iStudent;
+  constructor(
+    private route : ActivatedRoute,
+    private studentDataService : StudentDataService
+  ) { }
+  // old approach => pass student object as input directive
+  // @Input() student : iStudent;
   ngOnInit(): void {
+    this.getStudent();
   }
 
+  getStudent() : void{
+    //this will be id determined from the current route
+    // http://localhost:4200/data/studentDetail/3
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.studentDataService.getStudent(id)
+    .subscribe(
+      student => this.student = student);
+    
+  }
 }
