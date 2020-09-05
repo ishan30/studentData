@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentDataService {
 
-  private apiUrl = 'api/students'; // URL for web API
+  private apiUrl = 'api/STUDENTS'; // URL for web API
   constructor(
     private http: HttpClient
   ) { }
@@ -24,8 +24,31 @@ export class StudentDataService {
     return this.http.get<iStudent[]>(this.apiUrl);
   }
 
+  // API -> Read => get
+  // API -> Update => put -> it always needs input parameter to pass as an object in body
+  // API -> Create/Add/Insert => post ->
+  // API -> Delete => delete 
+
+
+
   // returns student data as per the input  -> return perticular data
   getStudent(inputId :number) : Observable<iStudent>{
     return of(STUDENTS.find( student => student.id === inputId));
+  }
+
+  //update student data
+  updateStudent(student: iStudent) : Observable<any> {
+    return this.http.put(this.apiUrl,student);
+  }
+
+  deleteStudent(student: iStudent) : Observable<any>{
+
+    const currentStudentId = student.id;
+    const deleteUrl = `${this.apiUrl}/${currentStudentId}`;
+    return this.http.delete(deleteUrl);
+  }
+
+  addStudent(student: iStudent) : Observable<any>{
+    return this.http.post(this.apiUrl,student);
   }
 }

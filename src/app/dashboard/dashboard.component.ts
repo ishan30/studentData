@@ -18,6 +18,6 @@ export class DashboardComponent implements OnInit {
 
   getStudents() :void {
     this.studentDataService.getStudents()
-    .subscribe(result => this.students = result.slice(1,3));
+    .subscribe(result => this.students = result.slice(1,5));
   }
 }

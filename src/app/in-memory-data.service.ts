@@ -40,7 +40,7 @@ export class InMemoryDataService implements InMemoryDbService{
         email : 'student5@xyz.com'
     }
     ];
-    return (STUDENTS);
+    return {STUDENTS};
   }
 
 }

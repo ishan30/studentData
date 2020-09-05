@@ -34,4 +34,27 @@ export class StudentDetailComponent implements OnInit {
   backClicked() : void{
     this.location.back();
   }
+
+  save() : void{
+    this.studentDataService.updateStudent(this.student).subscribe();
+  }
+
+  deleteStudent() : void{
+    this.studentDataService.deleteStudent(this.student).subscribe(
+      x => this.backClicked()
+    );
+  }
+
+  addNew() : void{
+    this.student.id=10;
+    this.student.name="S10new student";
+    this.student.email="s10@gmail.com";
+    this.student.mobileNo=10005324234;
+
+    this.studentDataService.addStudent(this.student).subscribe(
+      _ => this.backClicked()
+    );
+
+  }
+
 }
