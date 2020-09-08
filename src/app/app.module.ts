@@ -11,13 +11,21 @@ import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService } from './in-memory-data.service';
+import { AdbannerComponent } from './adbanner/adbanner.component';
+import { StudentAdComponent } from './student-ad/student-ad.component';
+import { DepartmentAdComponent } from './department-ad/department-ad.component';
+import { AdDirective } from './ad.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
     StudentDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdbannerComponent,
+    StudentAdComponent,
+    DepartmentAdComponent,
+    AdDirective
   ],
   imports: [
     BrowserModule,
