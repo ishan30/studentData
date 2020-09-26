@@ -18,7 +18,7 @@ export class AdbannerComponent implements OnInit {
   constructor(private componentFactoryResolver : ComponentFactoryResolver) { }
 
   ngOnInit(): void {
-    this.loadComponent();
+    // this.loadComponent();
     this.getAds();
   }
 
