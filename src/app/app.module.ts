@@ -16,6 +16,7 @@ import { StudentAdComponent } from './student-ad/student-ad.component';
 import { DepartmentAdComponent } from './department-ad/department-ad.component';
 import { AdDirective } from './ad.directive';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
+import { TemlateDrivenFormDemoComponent } from './temlate-driven-form-demo/temlate-driven-form-demo.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsDemoComponent } from './forms-demo/forms-demo.component';
     StudentAdComponent,
     DepartmentAdComponent,
     AdDirective,
-    FormsDemoComponent
+    FormsDemoComponent,
+    TemlateDrivenFormDemoComponent
   ],
   imports: [
     BrowserModule,

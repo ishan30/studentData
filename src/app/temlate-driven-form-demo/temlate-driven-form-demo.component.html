@@ -1,0 +1,48 @@
+<p>temlate-driven-form-demo works!</p>
+
+<h2>Student Form(Template Driven)</h2>
+<form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+    <label>Name</label>
+    <input type="text"  class="form-control"
+    (ngModel)='name' [value]='name'
+    id="name" name="name"  required minlength="5"
+    #name="ngModel">
+
+    <div [hidden]="name.valid || name.pristine"
+     class="alert">
+     <div *ngIf="name.errors.required">
+         Name is required
+     </div>
+     <div *ngIf="name.errors.minlength">
+         Name should have min 5 chars.
+     </div>
+    </div>
+     <p>Valid : {{name.valid}}</p>
+     <p>Pristine : {{name.pristine}}</p>
+     <p>touched : {{name.touched}}</p>
+     <p>dirty : {{name.dirty}}</p>
+     <p>invalid : {{name.invalid}}</p>
+     <p>untouched : {{name.untouched}}</p>
+    <br/>
+    <label>Email</label>
+    <input type="email" 
+    (ngModel)='email' [value]='email'
+     class="form-control"
+    id="email" name="email" required email #email="ngModel"> 
+    <div [hidden]="email.valid || email.pristine"
+    class="alert">email is required</div>
+    <p>Valid : {{email.valid}}</p>
+    <p>Pristine : {{email.pristine}}</p>
+    <p>touched : {{email.touched}}</p>
+    <p>dirty : {{email.dirty}}</p>
+    <p>invalid : {{email.invalid}}</p>
+    <p>untouched : {{email.untouched}}</p>
+    <br/>
+    <label>Select Semester :</label>
+    <select class="form-control" id="sem" name="sem">
+        <option *ngFor='let sem of semesters' [value]='sem'>{{sem}}</option>
+    </select>
+
+    <br/>
+    <button type="submit">Submit</button>
+</form>
