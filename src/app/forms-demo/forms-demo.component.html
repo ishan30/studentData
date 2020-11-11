@@ -1,0 +1,58 @@
+<p>forms-demo works!</p>
+<!-- <label>Fav Color :</label> -->
+<!-- Reactive Form needs ReactiveFormsModule-->
+<!-- <input type="text" [formControl]="favColorControl" /> -->
+
+<!-- Template Driven needs FormsModule-->
+<!-- <input type="text" [(ngModel)]="favColor" /> -->
+
+
+<form [formGroup]='studentProfileForm' (ngSubmit)='onSubmit()' >
+    <label>Name :
+    <input type="text" name="name" formControlName="name" required minlength="5"/>
+    </label>
+    <!-- <div *ngIf="name.valid">
+        <p>Name valid? {{name.valid}}</p>
+    <p>Name touched ? : {{name.touched}}</p>
+    <p>Name Dirty ? : {{name.dirty}}</p>
+    </div> -->
+    
+    <br/>
+    <label> 
+        Email:
+        <input type="email" formControlName="email"/>
+    </label>
+
+    <div formGroupName='address'>
+        <h3>Adddress</h3>
+
+        <label>
+            City:
+            <input type="text" formControlName="city"/>
+        </label>
+        
+        <label>
+            State:
+            <input type="text" formControlName="state"/>
+        </label>
+    </div>
+
+
+    <div *ngIf='studentProfileForm'>
+
+        
+<p> 
+    Form Value : {{studentProfileForm.value}}
+</p>
+<p> 
+    Form Validation : {{studentProfileForm.valid}}
+</p>
+
+
+<p> 
+    Form Status : {{studentProfileForm.status}}
+</p>
+        </div>
+   
+    <button type="submit" [disabled]='!studentProfileForm.valid'>Add Student</button>
+</form>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
@@ -15,6 +15,8 @@ import { AdbannerComponent } from './adbanner/adbanner.component';
 import { StudentAdComponent } from './student-ad/student-ad.component';
 import { DepartmentAdComponent } from './department-ad/department-ad.component';
 import { AdDirective } from './ad.directive';
+import { FormsDemoComponent } from './forms-demo/forms-demo.component';
+import { TemlateDrivenFormDemoComponent } from './temlate-driven-form-demo/temlate-driven-form-demo.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { AdDirective } from './ad.directive';
     AdbannerComponent,
     StudentAdComponent,
     DepartmentAdComponent,
-    AdDirective
+    AdDirective,
+    FormsDemoComponent,
+    TemlateDrivenFormDemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
   ],

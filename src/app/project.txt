@@ -1,0 +1,37 @@
+Headstart for the project :
+Project Definition :  Health Wallet / Medical History
+
+-   Create some mock design /pages : you can search on internet for similar application
+
+PW1(19 to 26 Sept) : 
+    - Setting up your app via CLI
+    - Create a github repo and push my code changes to repo :
+        - everyone to pull master branch from github repo
+        - everyone / pair of programmers will be working on their own branch
+            and Pull Request will be created to merge the changes to master 
+                - Add me / add other programmers for review
+        - Registration Screen 
+        - Login 
+
+
+THEME   
+- Login/Registration :
+    Fields 
+        -Registration :
+            -First Name
+            -Last Name
+            -emailid
+            -mobile  no
+            -password
+
+    Button : [Login]
+-   Landing pages
+    - Family Details (maybe in a table) -> Person Details
+        - Kendo Angular UI 
+        Datamodal
+    - [ + Add Family Member]
+
+    -Person Details 
+
+        - Common Details
+        - Specific Details
