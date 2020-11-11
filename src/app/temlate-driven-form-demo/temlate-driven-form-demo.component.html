@@ -11,7 +11,7 @@
     <div [hidden]="name.valid || name.pristine"
      class="alert">
      <div *ngIf="name.errors.required">
-         Name is required
+         Name is required field
      </div>
      <div *ngIf="name.errors.minlength">
          Name should have min 5 chars.
